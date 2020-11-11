@@ -4,6 +4,8 @@ const MoviesService = require('../services/movies')
 const { movieIdSchema, createMovieSchema, updateMovieSchema } = require('../utils/schemas/movies')
 
 const validationHandler = require('../utils/middleware/validationHandler')
+const cacheResponse = require('../utils/cacheResponse')
+const { FIVE_MINUTES_IN_SECONDS, SIXTY_MINUTES_IN_SECONDS } = require('../utils/time')
 
 function moviesApi(app) {
     const router = express.Router()
